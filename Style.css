@@ -1,0 +1,370 @@
+/* ===================== THEME COLORS ===================== */
+:root{
+  --choco-dark: #3a2d28;     /* main dark chocolate */
+  --choco-medium: #5a463f;
+  --cream: #f7efe8;          /* page background */
+  --accent: #d9b89a;         /* warm cream accent */
+  --btn-cream: #f2e6d8;      /* button background (light) */
+  --muted: #6b5a56;
+  --white: #ffffff;
+  --shadow: rgba(0,0,0,0.12);
+}
+
+/* ===================== GLOBAL ===================== */
+* { box-sizing: border-box; }
+body{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f2f2f;
+  background: var(--cream);
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* links */
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: none; }
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  background: var(--choco-dark) !important;
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: var(--btn-cream) !important;
+}
+.navbar .nav-link.active {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+/* small brand image alignment */
+.navbar-brand img { height: 40px; margin-right: 8px; }
+
+/* ===================== HERO (index) ===================== */
+/* If you're using the inline hero style or .hero-section, both are covered */
+.hero, .hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color: var(--white);
+}
+
+/* hero image if background-image used (index.html uses inline background) */
+.hero::before, .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28,20,18,0.55), rgba(28,20,18,0.65));
+  /* extra darkening so text is readable on white/pink images */
+  z-index: 1;
+}
+
+/* center content */
+.hero .container, .hero-section .hero-content, .hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* hero typography */
+.hero h1, .hero-section h1 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  color: var(--white);
+}
+.hero p, .hero-section p {
+  color: rgba(255,255,255,0.9);
+}
+
+/* hero button */
+.hero .btn, .hero-section .hero-btn {
+  background: var(--accent);
+  color: #20140f;
+  border-radius: 10px;
+  padding: 12px 22px;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.hero .btn:hover, .hero-section .hero-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+}
+
+/* ===================== CARDS / FEATURED PRODUCTS ===================== */
+.featured-products .card,
+.product-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .28s ease, box-shadow .28s ease;
+  border: none;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.featured-products .card:hover,
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* product image consistent sizing */
+.product-card img.product-img,
+.product-card img,
+.featured-products .card-img-top {
+  width: 100%;
+  height: 240px;              /* uniform height */
+  object-fit: cover;
+  border-radius: 8px;
+  display:block;
+  transition: transform .35s ease;
+}
+
+/* subtle zoom on image hover */
+.product-card:hover img.product-img,
+.featured-products .card:hover .card-img-top {
+  transform: scale(1.04);
+}
+
+/* product card body spacing */
+.product-card h4,
+.featured-products .card .card-title {
+  color: var(--choco-dark);
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* order button style (used in products.html) */
+.order-btn,
+.order-btn:focus,
+.order-btn:active {
+  display:inline-block;
+  background: var(--choco-medium);
+  color: var(--btn-cream);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  transition: transform .18s ease, background .18s ease;
+}
+.order-btn:hover {
+  transform: translateY(-3px);
+  background: #563f38;
+}
+
+/* ===================== PRODUCTS GRID RESPONSIVE ===================== */
+.products {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+/* ensure equal-height card containers */
+.product-card .mt-3 { margin-top: 12px; }
+
+/* ===================== DELIVERY OPTIONS SECTION ===================== */
+.delivery-section {
+  padding: 48px 0;
+  background: var(--choco-dark);
+  color: var(--white);
+}
+.delivery-section h3 { color: var(--btn-cream); font-weight:700; }
+.delivery-section .col-md-3 h5 { font-size: 1.05rem; margin-bottom: 6px; color: var(--btn-cream); }
+.delivery-section .col-md-3 p { color: rgba(255,255,255,0.9); margin-bottom:0; }
+
+/* small card look for delivery items */
+.delivery-item {
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  transition: transform .2s ease, background .2s ease;
+}
+.delivery-item:hover { transform: translateY(-6px); background: rgba(255,255,255,0.06); }
+
+/* ===================== ABOUT & TEAM (cards) ===================== */
+.card.p-3, .card.p-4 {
+  border-radius: 12px;
+}
+
+/* team image circle */
+.card img.rounded-circle { width: 120px; height:120px; object-fit: cover; }
+
+/* hover for team cards */
+.card:hover { transform: translateY(-6px); box-shadow: 0 12px 26px rgba(0,0,0,0.14); }
+
+/* ===================== CONTACT FORM ===================== */
+.contact-section {
+  padding: 48px 0;
+  background: linear-gradient(180deg, rgba(250,246,244,0.9), rgba(247,239,233,0.98));
+}
+.contact-section h2 { color: var(--choco-dark); font-weight:700; }
+.contact-section .form-control:focus {
+  border-color: var(--choco-medium);
+  box-shadow: 0 6px 18px rgba(90,70,63,0.12);
+}
+
+/* subtle button style for contact submit */
+.btn-primary {
+  background: var(--choco-dark);
+  border: none;
+  color: var(--btn-cream);
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+.btn-primary:hover { background: var(--choco-medium); transform: translateY(-3px); }
+
+/* ===================== FOOTER ===================== */
+.footer {
+  background: #2b211e;
+  color: rgba(255,255,255,0.95);
+  padding: 36px 0;
+}
+.footer img { height: 44px; }
+.footer p { color: rgba(255,255,255,0.8); }
+.footer a.footer-link { color: rgba(255,255,255,0.85); transition: color .2s ease; }
+.footer a.footer-link:hover { color: var(--accent); text-decoration: none; }
+
+/* small centered footer layout */
+.footer .container { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.footer .container > div { flex: 1 1 200px; }
+
+/* ===================== ANIMATIONS (reusable) ===================== */
+/* fade in up (used by .fade-up etc) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.9s forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* hero-specific keyframes (already used earlier) */
+@keyframes fadeInDown { 0% { opacity:0; transform: translateY(-30px);} 100% { opacity:1; transform: translateY(0);} }
+@keyframes fadeInUp { 0% { opacity:0; transform: translateY(30px);} 100% { opacity:1; transform: translateY(0);} }
+
+/* ===================== SMALL UI HELPERS ===================== */
+.text-muted-soft { color: #7b6a64; }
+.center { text-align:center; }
+
+/* ===================== RESPONSIVE TWEAKS ===================== */
+@media (max-width: 991px) {
+  .product-card img.product-img,
+  .product-card img,
+  .featured-products .card-img-top { height: 220px; }
+  .footer .container { flex-direction: column; text-align:center; }
+}
+
+@media (max-width: 575px) {
+  .product-card img.product-img,
+  .product-card img,
+  .featured-products .card-img-top { height: 180px; object-position: center top; }
+  .hero { min-height: 45vh; }
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 0.95rem; }
+}
+
+/* ===================== FORM & ORDER PAGES (future) ===================== */
+/* Order form main container */
+.order-form {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+.form-label { font-weight:600; color:var(--choco-dark); }
+
+/* order buttons */
+.btn-order-primary {
+  background: var(--choco-dark); color: var(--btn-cream);
+  border-radius: 8px; padding: 10px 18px; border: none; font-weight:700;
+}
+.btn-order-primary:hover { background: var(--choco-medium); transform: translateY(-3px); }
+
+/* ===================== UTILITIES ===================== */
+.mb-24 { margin-bottom: 24px; }
+.mt-24 { margin-top: 24px; }
+
+/* ===================== END ===================== */
+/* ==================== Buttons ==================== */
+.btn-custom, .order-btn {
+    background: #f4b66f; /* warm bakery color */
+    color: #3a2d28;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 10px 25px;
+    border: none;
+}
+
+.btn-custom:hover, .order-btn:hover {
+    background: #3a2d28;
+    color: #f4b66f;
+    transform: scale(1.05);
+}
+
+/* ==================== Cards ==================== */
+.card, .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.card:hover, .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* ==================== Form Buttons ==================== */
+.hover-scale {
+    transition: transform 0.25s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* ==================== AOS Fade-up for all sections ==================== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.8s ease-in-out;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between; /* Ensures proper spacing between elements */
+    align-items: center; /* Aligns the items in the center vertically */
+    margin-bottom: 10px;
+}
+
+.cart-item input {
+    width: 50px;
+    text-align: center;
+}
+
+.cart-item span {
+    display: inline-block;
+    width: 80px; /* Add a consistent width for price display */
+    text-align: right;
+}
+
+.cart-item button {
+    margin-left: 10px; /* Adds space between the remove button and other elements */
+}
+

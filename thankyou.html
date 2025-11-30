@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You - BakeCraft</title>
+
+<link rel="icon" type="image/png" href="Logo.png">
+
+<style>
+    /* ================= RESET & GLOBALS ================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background-color: #f7eee4; /* Theme background */
+        color: #212529;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ================= CONTAINER ================= */
+    .thankyou-box {
+        margin-top: 10vh;
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        padding: 0 15px;
+    }
+
+    img {
+        height: 80px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    h2 {
+        font-weight: 700;
+        margin-bottom: 1rem; /* mb-3 */
+        font-size: 2rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    /* ================= BUTTON (Warning Yellow) ================= */
+    .btn-warning {
+        display: inline-block;
+        background-color: #ffc107; /* btn-warning */
+        color: #000;
+        text-decoration: none;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        margin-top: 1rem; /* mt-3 */
+        font-weight: 600;
+        transition: opacity 0.2s;
+        border: 1px solid #ffc107;
+        cursor: pointer;
+    }
+
+    .btn-warning:hover {
+        opacity: 0.85;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="thankyou-box">
+  <img src="Logo.png" alt="BakeCraft Logo">
+  <h2>Thank You for Your Order!</h2>
+  <p>Your delicious treats will be with you soon. 🍰</p>
+  <a href="products.html" class="btn-warning">Back to Products</a>
+</div>
+
+<script>
+// Redirect automatically after 5 seconds
+setTimeout(() => { window.location.href = "products.html"; }, 5000);
+</script>
+
+</body>
+</html>
